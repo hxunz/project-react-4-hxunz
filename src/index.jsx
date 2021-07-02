@@ -7,4 +7,5 @@ ReactDOM.render(
       <h1>To-do</h1>
     </div>
   ),
+  document.getElementById('app'),
 );
