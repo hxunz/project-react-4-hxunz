@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import DailyRoutine from './DailyRoutine';
+
 ReactDOM.render(
   (
-    <div>
-      <h1>To-do</h1>
-    </div>
+    <DailyRoutine />
   ),
   document.getElementById('app'),
 );
