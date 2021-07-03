@@ -5,7 +5,7 @@ import Item from './Item';
 export default function DailyRoutineList({ tasks, onClickDelete }) {
   if (tasks.length === 0) {
     return (
-      <p>할 일이 없어요!</p>
+      <p>Add your rouinte</p>
     );
   }
 

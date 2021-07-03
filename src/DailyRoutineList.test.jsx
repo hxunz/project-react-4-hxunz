@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 
 import DailyRoutineList from './DailyRoutineList';
 
-describe('LisDailyRoutineListt', () => {
+describe('DailyRoutineList', () => {
   const handleClickDelete = jest.fn();
 
   function renderList(tasks) {
@@ -29,10 +29,10 @@ describe('LisDailyRoutineListt', () => {
       expect(getByText(/Task-2/)).not.toBeNull();
     });
 
-    it('renders “완료” button to delete a task', () => {
+    it('renders “Done” button to delete a task', () => {
       const { getAllByText } = renderList(tasks);
 
-      const buttons = getAllByText('완료');
+      const buttons = getAllByText('Done');
 
       fireEvent.click(buttons[0]);
 
@@ -46,7 +46,7 @@ describe('LisDailyRoutineListt', () => {
 
       const { getByText } = renderList(tasks);
 
-      expect(getByText(/할 일이 없어요/)).not.toBeNull();
+      expect(getByText(/Add your rouinte/)).not.toBeNull();
     });
   });
 });
