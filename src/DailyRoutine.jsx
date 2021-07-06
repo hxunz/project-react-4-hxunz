@@ -1,11 +1,15 @@
 import React from 'react';
 
+import {
+  Link,
+} from 'react-router-dom';
+
 export default function DailyRoutine() {
   return (
-    <p>
-      <button type="button" onClick={onclick}>
+    <div>
+      <Link to="/DailyRoutineList">
         Daily Routine
-      </button>
-    </p>
+      </Link>
+    </div>
   );
 }
