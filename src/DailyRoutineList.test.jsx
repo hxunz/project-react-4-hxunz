@@ -46,7 +46,7 @@ describe('DailyRoutineList', () => {
 
       const { getByText } = renderList(tasks);
 
-      expect(getByText(/Add your rouinte/)).not.toBeNull();
+      expect(getByText(/Add your routine/)).not.toBeNull();
     });
   });
 });
