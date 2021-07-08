@@ -7,7 +7,7 @@ import {
 export default function DailyRoutine() {
   return (
     <div>
-      <Link to="/DailyRoutineList">
+      <Link to="/Input">
         Daily Routine
       </Link>
     </div>
