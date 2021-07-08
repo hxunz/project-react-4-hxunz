@@ -5,12 +5,12 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 
-import DailyRoutine from './DailyRoutine';
+import App from './App';
 
 ReactDOM.render(
   (
     <BrowserRouter>
-      <DailyRoutine />
+      <App />
     </BrowserRouter>
   ),
   document.getElementById('app'),
