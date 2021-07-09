@@ -8,23 +8,19 @@ test('Input', () => {
   const handleChange = jest.fn();
   const handleClick = jest.fn();
 
-  const { getByDisplayValue, getByLabelText, getByText } = render((
+  const { getByDisplayValue, getByLabelText } = render((
     <Input
-      value="TODO"
+      value="Make your routine"
       onChange={handleChange}
       onClick={handleClick}
     />
   ));
 
-  expect(getByDisplayValue('TODO')).not.toBeNull();
+  expect(getByDisplayValue('Make your routine')).not.toBeNull();
 
-  fireEvent.change(getByLabelText('TODO'), {
+  fireEvent.change(getByLabelText('Make your routine'), {
     target: { value: 'Do something' },
   });
 
   expect(handleChange).toBeCalled();
-
-  fireEvent.click(getByText('ADD'));
-
-  expect(handleClick).toBeCalled();
 });

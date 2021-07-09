@@ -1,11 +1,16 @@
 import React from 'react';
 
-export default function Input({ value, onChange, onClick }) {
+import Fab from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
+
+export default function Input({ value, onChange }) {
   return (
     <p>
-      <label htmlFor="input-task-title">
-        TODO
-      </label>
+      <h1>
+        <label htmlFor="input-task-title">
+          Make your routine
+        </label>
+      </h1>
       <input
         id="input-task-title"
         type="text"
@@ -13,9 +18,9 @@ export default function Input({ value, onChange, onClick }) {
         value={value}
         onChange={onChange}
       />
-      <button type="button" onClick={onClick}>
-        ADD
-      </button>
+      <Fab color="primary" aria-label="add">
+        <AddIcon />
+      </Fab>
     </p>
   );
 }
