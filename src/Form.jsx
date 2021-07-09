@@ -3,7 +3,7 @@ import React from 'react';
 import Fab from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-export default function Input({ value, onChange }) {
+export default function Form({ value, onChange }) {
   return (
     <p>
       <h1>

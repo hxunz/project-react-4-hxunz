@@ -2,14 +2,14 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 
-import Input from './Input';
+import Form from './Form';
 
 test('Input', () => {
   const handleChange = jest.fn();
   const handleClick = jest.fn();
 
   const { getByDisplayValue, getByLabelText } = render((
-    <Input
+    <Form
       value="Make your routine"
       onChange={handleChange}
       onClick={handleClick}

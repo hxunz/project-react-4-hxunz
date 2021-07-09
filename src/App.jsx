@@ -6,14 +6,14 @@ import {
 } from 'react-router-dom';
 
 import DailyRoutine from './DailyRoutine';
-import Input from './Input';
+import Form from './Form';
 import NotFoundPage from './NotFoundPage';
 
 export default function App() {
   return (
     <Switch>
       <Route exact path="/" component={DailyRoutine} />
-      <Route path="/Input" component={Input} />
+      <Route path="/Form" component={Form} />
       <Route component={NotFoundPage} />
     </Switch>
   );
