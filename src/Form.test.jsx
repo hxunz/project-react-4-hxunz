@@ -9,7 +9,7 @@ describe('Input', () => {
   const handleClick = jest.fn();
 
   context('Make routine', () => {
-    const { getByDisplayValue, getByLabelText } = render((
+    const { getByDisplayValue, getByLabelText, getByText } = render((
       <Form
         value="Make your routine"
         onChange={handleChange}
@@ -25,6 +25,10 @@ describe('Input', () => {
       });
 
       expect(handleChange).toBeCalled();
+
+      fireEvent.click(getByText('+'));
+
+      expect(handleClick).toBeCalled();
     });
   });
 });

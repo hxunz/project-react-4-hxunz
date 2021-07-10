@@ -3,7 +3,7 @@ import React from 'react';
 import Fab from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-export default function Form({ value, onChange }) {
+export default function Form({ value, onChange, onClick }) {
   return (
     <p>
       <h1>
@@ -18,7 +18,7 @@ export default function Form({ value, onChange }) {
         value={value}
         onChange={onChange}
       />
-      <Fab color="primary" aria-label="add">
+      <Fab color="primary" aria-label="add" onClick={onClick}>
         <AddIcon />
       </Fab>
     </p>
