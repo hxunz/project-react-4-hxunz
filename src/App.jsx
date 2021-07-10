@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Switch>
       <Route exact path="/" component={DailyRoutine} />
-      <Route path="/Form" component={Form} />
+      <Route path="/routine" component={Form} />
       <Route component={NotFoundPage} />
     </Switch>
   );
