@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 
 import Item from './Item';
 
-test('Item', () => {
+describe('Item', () => {
   const task = {
     id: 1,
     title: '뭐라도 하기',
@@ -12,18 +12,22 @@ test('Item', () => {
 
   const handleClick = jest.fn();
 
-  const { container, getByText } = render((
-    <Item
-      task={task}
-      onClickDelete={handleClick}
-    />
-  ));
+  context('delete task', () => {
+    const { container, getByText } = render((
+      <Item
+        task={task}
+        onClickDelete={handleClick}
+      />
+    ));
 
-  expect(container).toHaveTextContent('Done');
+    it('renders delete a task', () => {
+      expect(container).toHaveTextContent('Done');
 
-  expect(handleClick).not.toBeCalled();
+      expect(handleClick).not.toBeCalled();
 
-  fireEvent.click(getByText('Done'));
+      fireEvent.click(getByText('Done'));
 
-  expect(handleClick).toBeCalledWith(1);
+      expect(handleClick).toBeCalledWith(1);
+    });
+  });
 });
