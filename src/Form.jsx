@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
 
 import Fab from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-export default function Form({ value, onChange, onClick }) {
+import {
+  addTask,
+  updateTaskTitle,
+} from './action';
+
+export default function Form() {
+  const { taskTitle } = useSelector((state) => ({
+    taskTitle: state.taskTitle,
+  }));
+
+  const dispatch = useDispatch();
+
+  const [task, setTask] = useState('');
+
+  const handleChange = (event) => {
+    console.log('event', event.target.value);
+    setTask(event.target.value);
+    dispatch(updateTaskTitle(event.target.value));
+  };
+
+  const handleSubmit = (event) => {
+    console.log(task);
+    // TODO: update taks list store
+    event.preventDefault();
+    dispatch(addTask());
+  };
+
   return (
-    <p>
+    <form onSubmit={handleSubmit}>
       <h1>
         <label htmlFor="input-task-title">
           Make your routine
@@ -15,12 +43,12 @@ export default function Form({ value, onChange, onClick }) {
         id="input-task-title"
         type="text"
         placeholder="Write your routine"
-        value={value}
-        onChange={onChange}
+        value={taskTitle}
+        onChange={handleChange}
       />
-      <Fab color="primary" aria-label="add" onClick={onClick}>
+      <Fab role="button" color="primary" aria-label="add" type="submit" value="Submit">
         <AddIcon />
       </Fab>
-    </p>
+    </form>
   );
 }
