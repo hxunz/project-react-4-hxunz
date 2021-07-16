@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import Item from './Item';
 
-export default function DailyRoutineList({ tasks, onClickDelete }) {
+export default function DailyRoutineList({ handleClickDelete }) {
+  const { tasks } = useSelector((state) => ({
+    tasks: state.tasks,
+  }));
+
   if (tasks.length === 0) {
     return (
       <p>Add your routine</p>
@@ -12,7 +17,7 @@ export default function DailyRoutineList({ tasks, onClickDelete }) {
   return (
     <ol>
       {tasks.map((task) => (
-        <Item key={task.id} task={task} onClickDelete={onClickDelete} />
+        <Item key={task.id} task={task} onClickDelete={handleClickDelete} />
       ))}
     </ol>
   );

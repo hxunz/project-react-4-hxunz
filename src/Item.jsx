@@ -1,10 +1,25 @@
 import React from 'react';
 
-export default function Item({ task: { id, title }, onClickDelete }) {
+import { useDispatch } from 'react-redux';
+
+import {
+  deleteTask,
+} from './action';
+
+export default function Item({ task }) {
+  const dispatch = useDispatch();
+
+  const handleClickDelete = () => {
+    dispatch(deleteTask(task.id));
+  };
+
   return (
     <li>
-      {title}
-      <button type="button" onClick={() => onClickDelete(id)}>
+      {task.title}
+      <button
+        type="button"
+        onClick={() => handleClickDelete(task.id)}
+      >
         Done
       </button>
     </li>

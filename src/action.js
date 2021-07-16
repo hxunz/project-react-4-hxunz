@@ -12,3 +12,12 @@ export function updateTaskTitle(taskTitle) {
     },
   };
 }
+
+export function deleteTask(id) {
+  return {
+    type: 'deleteTask',
+    payload: {
+      id,
+    },
+  };
+}
