@@ -7,9 +7,16 @@ import {
 export default function DailyRoutine() {
   return (
     <div>
-      <Link to="/routine">
-        Daily Routine
-      </Link>
+      <p>
+        <Link to="/routine">
+          Daily Routine
+        </Link>
+      </p>
+      <p>
+        <Link to="/sounds">
+          Sounds
+        </Link>
+      </p>
     </div>
   );
 }
