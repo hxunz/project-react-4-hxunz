@@ -12,7 +12,7 @@ import {
 
 import DailyRoutineList from './DailyRoutineList';
 
-export default function Form() {
+export default function DailyRoutineForm() {
   const { taskTitle } = useSelector((state) => ({
     taskTitle: state.taskTitle,
   }));
@@ -42,6 +42,7 @@ export default function Form() {
           placeholder="Write your routine"
           value={taskTitle}
           onChange={handleChange}
+          autoComplete="off"
         />
         <Fab role="button" color="primary" aria-label="add" type="submit" value="Submit">
           <AddIcon />
