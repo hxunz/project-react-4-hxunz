@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 
-import Form from './Form';
+import DailyRoutineForm from './DailyRoutineForm';
 
 describe('Input', () => {
   const handleChange = jest.fn();
@@ -10,7 +10,7 @@ describe('Input', () => {
 
   context('Make routine', () => {
     const { getByDisplayValue, getByLabelText, getByText } = render((
-      <Form
+      <DailyRoutineForm
         value="Make your routine"
         onChange={handleChange}
         onClick={handleClick}

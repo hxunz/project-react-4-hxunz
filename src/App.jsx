@@ -6,14 +6,16 @@ import {
 } from 'react-router-dom';
 
 import DailyRoutine from './DailyRoutine';
-import Form from './Form';
+import DailyRoutineForm from './DailyRoutineForm';
+import Sounds from './Sounds';
 import NotFoundPage from './NotFoundPage';
 
 export default function App() {
   return (
     <Switch>
       <Route exact path="/" component={DailyRoutine} />
-      <Route path="/routine" component={Form} />
+      <Route path="/routine" component={DailyRoutineForm} />
+      <Route path="/sounds" component={Sounds} />
       <Route component={NotFoundPage} />
     </Switch>
   );
