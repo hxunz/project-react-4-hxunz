@@ -1,89 +1,32 @@
 import React from 'react';
 
-import Fab from '@material-ui/core/Button';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-import ReactAudioPlayer from 'react-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import SoundButton from './SoundButton';
 
 export default function Sounds() {
-  const styles = {
-    rain: {
-      height: 135,
-      width: 500,
-      margin: 20,
-      justifyContent: 'center',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundImage: `url(${'image/rainy.jpg'})`,
-    },
-    fire: {
-      height: 135,
-      width: 500,
-      margin: 20,
-      justifyContent: 'center',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundImage: `url(${'image/fire.jpg'})`,
-    },
-    ocean: {
-      height: 135,
-      width: 500,
-      margin: 20,
-      justifyContent: 'center',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundImage: `url(${'image/ocean.jpg'})`,
-    },
-    forest: {
-      height: 135,
-      width: 500,
-      margin: 20,
-      justifyContent: 'center',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundImage: `url(${'image/forest.jpg'})`,
-    },
-  };
-
   return (
-    <>
-      <Fab
-        role="button"
-        color="white"
-        aria-label="play"
-        style={styles.rain}
+    <div style={{
+      backgroundImage: `url(${'image/nature.gif'})`,
+      backgroundRepeat: 'round',
+    }}
+    >
+      <article style={{
+        backgroundColor: 'gainsboro',
+        width: 550,
+        margin: '0 auto',
+      }}
       >
-        <ReactAudioPlayer
-          src="sound/rain.mp3"
-          autoPlay
-          controls
-        />
-        <PlayCircleOutlineIcon />
-      </Fab>
-      <Fab
-        role="button"
-        color="white"
-        aria-label="play"
-        style={styles.fire}
-      >
-        <PlayCircleOutlineIcon />
-      </Fab>
-      <Fab
-        role="button"
-        color="white"
-        aria-label="play"
-        style={styles.ocean}
-      >
-        <PlayCircleOutlineIcon />
-      </Fab>
-      <Fab
-        role="button"
-        color="white"
-        aria-label="play"
-        style={styles.forest}
-      >
-        <PlayCircleOutlineIcon />
-      </Fab>
-    </>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+        >
+          <SoundButton audioSrc="sound/rain.mp3" backgroundImg="image/rainy.jpg" />
+          <SoundButton audioSrc="sound/bonfire.mp3" backgroundImg="image/fire.jpg" />
+          <SoundButton audioSrc="sound/wave.mp3" backgroundImg="image/ocean.jpg" />
+          <SoundButton audioSrc="sound/forest.wav" backgroundImg="image/forest.jpg" />
+        </div>
+      </article>
+    </div>
   );
 }
