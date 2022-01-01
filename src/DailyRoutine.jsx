@@ -4,19 +4,25 @@ import {
   Link,
 } from 'react-router-dom';
 
+import styled from 'styled-components';
+
 export default function DailyRoutine() {
   return (
-    <div>
-      <p>
+    <MenuList>
+      <li>
         <Link to="/routine">
           Daily Routine
         </Link>
-      </p>
-      <p>
+      </li>
+      <li>
         <Link to="/sounds">
           Sounds
         </Link>
-      </p>
-    </div>
+      </li>
+    </MenuList>
   );
 }
+
+const MenuList = styled.ul`
+  list-style: none;
+`;

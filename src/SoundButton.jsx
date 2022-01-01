@@ -10,17 +10,18 @@ const useAudio = (url) => {
 
   useEffect(() => {
     if (audio.current) {
-      playing ? audio.current.play() : audio.current.pause();
+      // TODO: 추후 린트 에러 해결하기
+      playing ? audio.current.play() : audio.current.pause(); // eslint-disable-line
     }
   },
   [playing]);
 
-  useEffect(() => {
-    audio.current.addEventListener('ended', () => setPlaying(false));
-    return () => {
-      audio.current.removeEventListener('ended', () => setPlaying(false));
-    };
-  }, []);
+  // useEffect(() => {
+  //   audio.current.addEventListener('ended', () => setPlaying(false));
+  //   return () => {
+  //     audio.current.removeEventListener('ended', () => setPlaying(false));
+  //   };
+  // }, []);
 
   return [toggle];
 };

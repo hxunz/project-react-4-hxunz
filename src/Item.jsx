@@ -7,18 +7,19 @@ import {
 } from './action';
 
 export default function Item({ task }) {
+  const { id, title } = task;
   const dispatch = useDispatch();
 
   const handleClickDelete = () => {
-    dispatch(deleteTask(task.id));
+    dispatch(deleteTask(id));
   };
 
   return (
     <li>
-      {task.title}
+      {title}
       <button
         type="button"
-        onClick={() => handleClickDelete(task.id)}
+        onClick={handleClickDelete}
       >
         Done
       </button>

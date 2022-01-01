@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Switch,
   Route,
-} from 'react-router-dom';
+} from 'react-router-dom'; // TODO: apply react-router v6
 
 import DailyRoutine from './DailyRoutine';
 import DailyRoutineForm from './DailyRoutineForm';
